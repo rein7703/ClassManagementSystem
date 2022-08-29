@@ -3,7 +3,7 @@ Dewasa ini, mahasiswa memiliki berbagai tanggung jawab mulai dari berbagai kelas
 
 # Kelompok 'Anak Bu Kinan'
 
-Ketua Kelompok  : Karunia Perjuangan M (20/456368/TK/50498)
+Ketua Kelompok  : Karunia Perjuangan Mustadl'Afin (20/456368/TK/50498)
 
 Anggota 1       : Annisa Raihana Cahya Putri (20/460540/TK/51129)
 
