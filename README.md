@@ -5,6 +5,6 @@ Dewasa ini, mahasiswa memiliki berbagai tanggung jawab mulai dari berbagai kelas
 
 Ketua Kelompok  : Karunia Perjuangan Mustadl'Afin (20/456368/TK/50498)
 
-Anggota 1       : Annisa Raihana Cahya Putri (20/460540/TK/51129)
+Anggota 1       : Annisa Raihana Cahya Putri - 20/460540/TK/51129
 
 Anggota 2       : Reinhart T A Siregar (20/456377/TK/50507)
