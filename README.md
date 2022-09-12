@@ -11,4 +11,4 @@ Anggota 2       : Reinhart T A Siregar (20/456377/TK/50507)
 
 Class Diagram:
 
-![Gambar Class Diagram Online Class Management System](ClassDiagram.png)
+![Gambar Class Diagram Online Class Management System](ClassDiagram.jpg)
