@@ -1,8 +1,8 @@
 namespace ClassManagementSystemMAUIVersion.View;
 
-public class NewPage1 : ContentPage
+public class MainPage : ContentPage
 {
-	public NewPage1()
+	public MainPage()
 	{
 		Content = new VerticalStackLayout
 		{
