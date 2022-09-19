@@ -8,37 +8,41 @@
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center"
-            HorizontalOptions="Center">
-
-            <Image
-                Source="https://cdn.idntimes.com/content-images/community/2022/08/fromandroid-73f779bc2f3fe41d001ec8454ee2cee1.jpg"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
+            HorizontalOptions="CenterAndExpand">
+            
             <Label
                 x:Name="Text123"
-                Text="Beliau ini"
+                Text="Login Sebagai"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="24"
                 HorizontalOptions="Center" />
 
+            <Image
+                Source="https://cdn-icons-png.flaticon.com/512/194/194931.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
 
+            
+
+            <StackLayout
+                Orientation="Horizontal"
+                Spacing="64">
 
             <Button
                 x:Name="CounterBtn"
-                Text="Click me"
+                Text="Mahasiswa"
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
 
             <Button
                 x:Name="ButtonNewPage"
-                Text="Buka halaman baru"
+                Text="Admin"
                 SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnClickNewPage"
+                Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
-
+</StackLayout>
         </VerticalStackLayout>
     </ScrollView>
 
