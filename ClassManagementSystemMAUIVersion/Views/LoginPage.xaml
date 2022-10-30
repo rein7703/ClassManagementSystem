@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
+    
+ 
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ClassManagementSystemMAUIVersion.Views.LoginPage"
              Title="LoginPage">
+
 
     <FlexLayout Direction="Column">
 
@@ -48,7 +51,7 @@
                                 Direction="Row" 
                                 JustifyContent="SpaceBetween"
                                 VerticalOptions="Center">
-                        <Button Clicked="onClickChanged" 
+                        <Button Clicked="onClickNewAccountButton" 
                                 Padding="0"
                                 Text="Belum punya Akun?"
                                 TextColor="Purple"
@@ -65,6 +68,7 @@
 
             <!-- Aside items -->
             <BoxView FlexLayout.Basis="25%"
+                     MinimumWidthRequest="100"
                      Color="DarkViolet" />
 
         </FlexLayout>

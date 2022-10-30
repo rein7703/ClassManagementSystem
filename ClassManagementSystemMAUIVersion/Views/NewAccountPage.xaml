@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClassManagementSystemMAUIVersion.Views.NewAccountPage"
+             Title="NewAccountPage"
+             NavigationPage.HasNavigationBar="False">
+    <FlexLayout Direction="Row">
+        <VerticalStackLayout FlexLayout.Grow="1" HorizontalOptions="Center" VerticalOptions="Center" Spacing="12">
+            <Label
+                Text="Buat Akun Baru"
+                FontSize="Large"
+                HorizontalTextAlignment="Center"
+                />
+            
+            <FlexLayout HeightRequest="32"
+                        WidthRequest="360"
+                        VerticalOptions="CenterAndExpand"
+                        JustifyContent="SpaceBetween"
+                        Direction="Row">
+                <Label
+                Text="Username :"
+                    Padding="0,8,0,8"
+                />
+                <Entry
+                    Placeholder="8-32 karakter"
+                    WidthRequest="200"/>
+            </FlexLayout>
+
+            <FlexLayout HeightRequest="32"
+                        WidthRequest="360"
+                        VerticalOptions="CenterAndExpand"
+                        JustifyContent="SpaceBetween"
+                        Direction="Row">
+                <Label
+                Text="NIU :"
+                    Padding="0,8,0,8"
+                />
+                <Entry
+                    Placeholder="8-32 karakter"
+                    WidthRequest="200"/>
+            </FlexLayout>
+
+            <Label Text="Prodi :"
+                   Padding="0,8,0,8"
+                />
+            <FlexLayout HeightRequest="32"
+                        WidthRequest="360"
+                        VerticalOptions="CenterAndExpand"
+                        JustifyContent="SpaceBetween"
+                        Direction="Row">
+                
+                <RadioButton Content="TE" GroupName="prodi" Margin="0"/>
+                <RadioButton Content="TIF" GroupName="prodi" Padding="0"/>
+                <RadioButton Content="TB" GroupName="prodi" Padding="0"/>
+            </FlexLayout>
+
+            <FlexLayout HeightRequest="32"
+                        WidthRequest="360"
+                        VerticalOptions="CenterAndExpand"
+                        JustifyContent="SpaceBetween"
+                        Direction="Row">
+                <Label
+                Text="Password :"
+                    Padding="0,8,0,8"
+                />
+                <Entry
+                    Placeholder="8-32 karakter"
+                    IsPassword="True"
+                    WidthRequest="200"/>
+            </FlexLayout>
+
+            <FlexLayout HeightRequest="32"
+                        WidthRequest="360"
+                        VerticalOptions="CenterAndExpand"
+                        JustifyContent="SpaceBetween"
+                        Direction="Row">
+                <Label
+                Text="Ulangi Password :"
+                    Padding="0,8,0,8"
+                />
+                <Entry
+                    Placeholder="8-32 karakter"
+                    IsPassword="True"
+                    WidthRequest="200"/>
+            </FlexLayout>
+
+            <HorizontalStackLayout HorizontalOptions="End">
+                <Button Text="Buat Akun"
+                        Margin="0,8,0,8"
+                        Padding="12,8,12,8"
+                        Clicked="onCreateAccount"/>
+            </HorizontalStackLayout>
+            
+        </VerticalStackLayout>
+        <BoxView
+            Color="Purple"
+            FlexLayout.Basis="25%"/>
+    </FlexLayout>
+</ContentPage>
