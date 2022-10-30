@@ -8,6 +8,7 @@
 
     <ShellContent
         Title="Home"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="LoginPage" />
 
 </Shell>

@@ -1,4 +1,4 @@
-﻿using ClassManagementSystemMAUIVersion.View;
+﻿using ClassManagementSystemMAUIVersion.Views;
 
 namespace ClassManagementSystemMAUIVersion;
 
