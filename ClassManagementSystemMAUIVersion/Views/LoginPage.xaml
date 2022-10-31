@@ -17,7 +17,7 @@
             <!-- Content -->
             <HorizontalStackLayout FlexLayout.Grow="1" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
                 <VerticalStackLayout>
-                    <Label Text="Class Management System" TextColor="Black" FontSize="32" FontAttributes="Bold"/>
+                    <Label Text="Class Management System" TextColor="Black" FontSize="40" FontAttributes="Bold"/>
                     <FlexLayout Direction="Row"
                                 HeightRequest="32"
                                 MinimumWidthRequest="240"
@@ -26,24 +26,20 @@
                         <Label Text="Username :" TextColor="Black" FontSize="16" FontAttributes="Bold"/>
                         <Entry x:Name="entry"
                                Placeholder="Username Anda"
-                               PlaceholderColor="DarkGrey"
-                               WidthRequest="300"
-                               BackgroundColor="LightGrey"
-                               TextColor="Black"/>
+                               WidthRequest="300"/>
                 </FlexLayout>
                 <FlexLayout Direction="Row"
+                            
                                 HeightRequest="32"
                                 MinimumWidthRequest="240"
                                 AlignItems="Center"
                                 JustifyContent="SpaceBetween" Margin="0,8,0,8">
-                        <Label Text="Password :" TextColor="Black" FontSize="16" FontAttributes="Bold"/>
+                        <Label Text="Password :" TextColor="Black" FontSize="16" FontAttributes="Bold" />
                         <Entry x:Name="entry2"
                                Placeholder="Password Anda"
-                               PlaceholderColor="DarkGrey"
                                WidthRequest="300"
                                IsPassword="True"
-                               BackgroundColor="LightGrey"
-                               TextColor="Black"/>
+/>
                 </FlexLayout>
                     <FlexLayout HeightRequest="36" 
                                 MinimumWidthRequest="240" 
@@ -54,10 +50,10 @@
                         <Button Clicked="onClickNewAccountButton" 
                                 Padding="0"
                                 Text="Belum punya Akun?"
-                                TextColor="Purple"
+                                TextColor="{DynamicResource Primary}"
                                 BackgroundColor="Transparent" 
                                 BorderColor="Transparent"/>
-                        <Button BackgroundColor="MediumPurple" Clicked="onClickChanged" Text="Login"/>
+                        <Button Clicked="onClickChanged" Text="Login"/>
                         
                     </FlexLayout>
                     
@@ -69,7 +65,7 @@
             <!-- Aside items -->
             <BoxView FlexLayout.Basis="25%"
                      MinimumWidthRequest="100"
-                     Color="DarkViolet" />
+                     Color="{DynamicResource Primary}" />
 
         </FlexLayout>
 

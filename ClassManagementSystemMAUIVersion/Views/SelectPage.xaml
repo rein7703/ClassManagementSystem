@@ -14,20 +14,28 @@
 
             <!-- Content -->
             <HorizontalStackLayout FlexLayout.Grow="1" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
-                <VerticalStackLayout Spacing="16"/>
+                <VerticalStackLayout Spacing="16">
                 <Label
-                    Text="Pilih Mode"/>
-                <HorizontalStackLayout>
+                    Text="Mau manage apa hari ini?"
+                    FontSize="40"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"
+                    Margin="0,32,0,32"/>
+                <FlexLayout Direction="Row" 
+                            JustifyContent="SpaceBetween"
+                            MinimumHeightRequest="64"
+                            MinimumWidthRequest="400">
                     <Button Text="Reminder Tugas"/>
                     <Button Text="Jadwal Kelas"/>
-                </HorizontalStackLayout>
+                </FlexLayout>
+                </VerticalStackLayout>
             </HorizontalStackLayout>
 
 
             <!-- Aside items -->
             <BoxView FlexLayout.Basis="25%"
                      MinimumWidthRequest="100"
-                     Color="DarkViolet" />
+                     Color="{DynamicResource Primary}" />
 
         </FlexLayout>
 

@@ -93,7 +93,7 @@
             
         </VerticalStackLayout>
         <BoxView
-            Color="Purple"
+            Color="{DynamicResource Primary}"
             FlexLayout.Basis="25%"/>
     </FlexLayout>
 </ContentPage>

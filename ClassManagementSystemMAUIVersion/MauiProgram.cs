@@ -13,6 +13,7 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 fonts.AddFont("Poppins-Regular.ttf", "PoppinsRegular");
                 fonts.AddFont("Poppins-Semibold.ttf", "PoppinsSemibold");
+				fonts.AddFont("SourceSans3-VariableFont_wght.ttf","SourceSans");
             });
 
 		return builder.Build();
