@@ -1,3 +1,4 @@
+using ClassManagementSystemMAUIVersion;
 using Npgsql;
 using System.Data;
 using System.Windows.Forms;
@@ -48,6 +49,7 @@ namespace ClassManagementSystemWinForms
                     if (result == null) { throw new DataException("Periksa kembali Username dan Password Anda"); }
                     
                     MessageBox.Show("Berhasil login dengan username "+txtUsername.Text);
+                    LoginID.ID = (int) result;
                     StudentChooseMode studentChooseMode = new StudentChooseMode();
                     studentChooseMode.Show();
                     studentChooseMode.FormClosing += delegate { this.Show(); };
@@ -73,7 +75,7 @@ namespace ClassManagementSystemWinForms
                     if (result == null) { throw new DataException("Periksa kembali Username dan Password Anda"); }
 
                     MessageBox.Show("Berhasil login dengan username " + txtUsername.Text);
-                    
+                    LoginID.ID = (int)result;
                     ClassManagerAdmin classManagerAdmin = new ClassManagerAdmin();
                     classManagerAdmin.Show();
                     classManagerAdmin.FormClosing += delegate { this.Show(); };

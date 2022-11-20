@@ -9,6 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Update="AddClassStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="AddClass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -22,9 +25,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ClassManagerAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="TaskManager.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ClassManager.cs">

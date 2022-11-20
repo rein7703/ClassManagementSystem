@@ -30,7 +30,6 @@
         {
             this.label3 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.btnEditProfil = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCourse = new System.Windows.Forms.DataGridView();
             this.button3 = new System.Windows.Forms.Button();
@@ -62,17 +61,7 @@
             this.btnLogin.TabIndex = 7;
             this.btnLogin.Text = "Tambah Kelas";
             this.btnLogin.UseVisualStyleBackColor = false;
-            // 
-            // btnEditProfil
-            // 
-            this.btnEditProfil.AutoSize = true;
-            this.btnEditProfil.Font = new System.Drawing.Font("Poppins SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEditProfil.Location = new System.Drawing.Point(975, 44);
-            this.btnEditProfil.Name = "btnEditProfil";
-            this.btnEditProfil.Size = new System.Drawing.Size(154, 50);
-            this.btnEditProfil.TabIndex = 10;
-            this.btnEditProfil.TabStop = true;
-            this.btnEditProfil.Text = "Edit Profil";
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // label1
             // 
@@ -95,6 +84,7 @@
             this.dgvCourse.RowTemplate.Height = 29;
             this.dgvCourse.Size = new System.Drawing.Size(1084, 379);
             this.dgvCourse.TabIndex = 12;
+            this.dgvCourse.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCourse_CellContentClick);
             // 
             // button3
             // 
@@ -131,11 +121,11 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dgvCourse);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnEditProfil);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label3);
             this.Name = "ClassManager";
             this.Text = "Landing Page";
+            this.Load += new System.EventHandler(this.ClassManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourse)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -146,7 +136,6 @@
 
         private Label label3;
         private Button btnLogin;
-        private LinkLabel btnEditProfil;
         private Label label1;
         private DataGridView dgvCourse;
         private Button button3;

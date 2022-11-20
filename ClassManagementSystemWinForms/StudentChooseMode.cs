@@ -27,10 +27,7 @@ namespace ClassManagementSystemWinForms
 
         private void btnToTask_Click(object sender, EventArgs e)
         {
-            TaskManager taskManager = new TaskManager();
-            taskManager.FormClosing += delegate { this.Show(); };
-            taskManager.Show();
-            this.Hide();
+            MessageBox.Show("Fitur ini Masih dikembangkan");
         }
     }
 }

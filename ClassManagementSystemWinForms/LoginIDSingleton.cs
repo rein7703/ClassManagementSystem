@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ClassManagementSystemMAUIVersion
 {
     public static class LoginID{
-        public static int? ID = null;
+        public static int ID = 0;
     }
 
 
