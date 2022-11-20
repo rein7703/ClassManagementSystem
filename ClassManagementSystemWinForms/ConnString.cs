@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ClassManagementSystemWinForms
 {
-    internal class ConnString
+    public static class ConnString
     {
-        public static string connString = "Host=localhost;Port=5432;Username=postgres;Password=halodunia123;Database=ClassManagementSystem";
+        public const string connString = "Host=localhost;Port=5432;Username=postgres;Password=halodunia123;Database=ClassManagementSystem";
     }
 }

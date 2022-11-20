@@ -7,19 +7,22 @@ using System.Threading.Tasks;
 
 namespace ClassManagementSystemMAUIVersion
 {
+    public static class LoginID{
+        public static int? ID = null;
+    }
 
 
-    class ConnectionSingleton
+    class LoginIDSingleton
     {
-        private ConnectionSingleton() { }
+        private LoginIDSingleton() { }
 
-        private static ConnectionSingleton _instance;
+        private static LoginIDSingleton _instance;
 
         // We now have a lock object that will be used to synchronize threads
         // during first access to the Singleton.
         private static readonly object _lock = new object();
 
-        public static ConnectionSingleton GetInstance(NpgsqlConnection value)
+        public static LoginIDSingleton GetInstance(int value)
         {
             // This conditional is needed to prevent threads stumbling over the
             // lock once the instance is ready.
@@ -41,7 +44,7 @@ namespace ClassManagementSystemMAUIVersion
                     // object.
                     if (_instance == null)
                     {
-                        _instance = new ConnectionSingleton();
+                        _instance = new LoginIDSingleton();
                         _instance.Value = value;
                     }
                 }
@@ -49,6 +52,6 @@ namespace ClassManagementSystemMAUIVersion
             return _instance;
         }
         // We'll use this property to prove that our Singleton really works.
-        public NpgsqlConnection Value { get; set; }
+        public int Value { get; set; }
     }
 }

@@ -27,8 +27,7 @@ namespace ClassManagementSystemWinForms
             else if (rbTB.Checked) prodi = "S1 TEKNIK BIOMEDIS";
             else prodi = txtOtherProdi.Text;
             Student student = new Student(txtName.Text, txtUsername.Text, txtPassword.Text, txtNIU.Text, prodi);
-            Console.WriteLine(student.createAtDatabase());
-
+            if (student.createAtDatabase()) this.Close(); ;
         }
         
         private async void btnCariNIU_Click(object sender, EventArgs e)
@@ -62,6 +61,11 @@ namespace ClassManagementSystemWinForms
             }
             catch (Exception ex)
             {
+                if (ex.Message.Contains("out of range"))
+                {
+                    MessageBox.Show("NIU tidak ditemukan");
+                    return;
+                }
                 MessageBox.Show(ex.Message);
             }
         }

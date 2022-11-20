@@ -109,13 +109,15 @@ namespace ClassManagementSystemWinForms
                 MessageBox.Show("Data berhasil ditambahkan");
                 return true;
             }
-            catch(Exception ex) {
-                if (ex.Message.Contains("23505")) {
+            catch (Exception ex)
+            {
+                if (ex.Message.Contains("23505"))
+                {
                     MessageBox.Show("Username sudah ada");
                     return false;
                 }
                 MessageBox.Show(ex.Message);
-                return false; 
+                return false;
             }
         }
 
@@ -154,14 +156,15 @@ namespace ClassManagementSystemWinForms
                 MessageBox.Show(ex.Message);
                 return false;
             }
-        }
-    
+        } 
+    }
 
-    public class Admin : User
-    {
 
-        private string _nip;
-        private string _jabatan;
+        public class Admin : User
+        {
+
+            private string _nip;
+            private string _jabatan;
 
             public Admin(string name, string username, string password, string nip, string jabatan)
             {
@@ -173,63 +176,64 @@ namespace ClassManagementSystemWinForms
             }
 
             public string NIP
-        {
-            get { return _nip; }
-            set { _nip = value; }
-        }
-
-        public string Jabatan
-        {
-            get { return _jabatan; }
-            set { _jabatan = value; }
-        }
-
-        public override bool createAtDatabase()
-        {
-            try
             {
-                string connstring = ConnString.connString;
-                using (var conn = new NpgsqlConnection(connstring))
-                {
-                    conn.Open();
-                    using (var cmd = new NpgsqlCommand())
-                    {
-                        cmd.Connection = conn;
-                        cmd.CommandText = "INSERT INTO \"Student\"(\"Name\", \"Username\", \"Password\", \"NIP\", \"Jabatan\") VALUES (@name, @username, @password, @nip, @jabatan)";
-                        cmd.Parameters.AddWithValue("name", _name);
-                        cmd.Parameters.AddWithValue("username", _username);
-                        cmd.Parameters.AddWithValue("password", _password);
-                        cmd.Parameters.AddWithValue("nip", int.Parse(_nip));
-                        cmd.Parameters.AddWithValue("jabatan", _jabatan);
-                        cmd.ExecuteNonQuery();
-                    }
-                    conn.Close();
-                }
-                MessageBox.Show("Data berhasil ditambahkan");
-                return true;
+                get { return _nip; }
+                set { _nip = value; }
             }
-            catch (Exception ex)
+
+            public string Jabatan
             {
-                if (ex.Message.Contains("23505"))
+                get { return _jabatan; }
+                set { _jabatan = value; }
+            }
+
+            public override bool createAtDatabase()
+            {
+                try
                 {
-                    MessageBox.Show("Username sudah ada");
+                    string connstring = ConnString.connString;
+                    using (var conn = new NpgsqlConnection(connstring))
+                    {
+                        conn.Open();
+                        using (var cmd = new NpgsqlCommand())
+                        {
+                            cmd.Connection = conn;
+                            cmd.CommandText = "INSERT INTO \"Admin\"(\"Name\", \"Username\", \"Password\", \"NIP\", \"Jabatan\") VALUES (@name, @username, @password, @nip, @jabatan)";
+                            cmd.Parameters.AddWithValue("name", _name);
+                            cmd.Parameters.AddWithValue("username", _username);
+                            cmd.Parameters.AddWithValue("password", _password);
+                            cmd.Parameters.AddWithValue("nip", int.Parse(_nip));
+                            cmd.Parameters.AddWithValue("jabatan", _jabatan);
+                            cmd.ExecuteNonQuery();
+                        }
+                        conn.Close();
+                    }
+                    MessageBox.Show("Data berhasil ditambahkan");
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    if (ex.Message.Contains("23505"))
+                    {
+                        MessageBox.Show("Username sudah ada");
+                        return false;
+                    }
+                    MessageBox.Show(ex.Message);
                     return false;
                 }
-                MessageBox.Show(ex.Message);
-                return false;
+            }
+
+            public void AddToCalendar(DateTime dateTime)
+            {
+
+            }
+
+            public void AddClass() { }
+
+            public override bool Login(string id, string password)
+            {
+                return true;
             }
         }
-
-        public void AddToCalendar(DateTime dateTime)
-        {
-
-        }
-
-        public void AddClass() { }
-
-        public override bool Login(string id, string password)
-        {
-            return true;
-        }
     }
-}
+

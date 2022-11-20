@@ -16,5 +16,21 @@ namespace ClassManagementSystemWinForms
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            ClassManager classManager = new ClassManager();
+            classManager.FormClosing += delegate { this.Show(); };
+            classManager.Show();
+            this.Hide();
+        }
+
+        private void btnToTask_Click(object sender, EventArgs e)
+        {
+            TaskManager taskManager = new TaskManager();
+            taskManager.FormClosing += delegate { this.Show(); };
+            taskManager.Show();
+            this.Hide();
+        }
     }
 }
