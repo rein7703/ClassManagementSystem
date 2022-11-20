@@ -53,6 +53,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="SQLite" Version="3.13.0" />
+	  <PackageReference Include="System.Data.SQLite" Version="1.0.116" />
+	  <PackageReference Include="UraniumUI.Icons.FontAwesome" Version="1.1.1" />
+	  <PackageReference Include="UraniumUI.Material" Version="1.1.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\ClassReminder.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

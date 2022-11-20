@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClassManagementSystemMAUIVersion.Views.ClassReminder"
+             Title="ClassReminder"
+             Padding="36">
+    <FlexLayout HorizontalOptions="Center" VerticalOptions="Center" Direction="Row">
+        <VerticalStackLayout FlexLayout.Basis="25%" BackgroundColor="Red">
+        <Label 
+            Text="Kelas" />
+        <Label 
+            Text="Semangat Belajar"/>
+        </VerticalStackLayout>
+    </FlexLayout>
+</ContentPage>

@@ -26,7 +26,7 @@
                             MinimumHeightRequest="64"
                             MinimumWidthRequest="400">
                     <Button Text="Reminder Tugas"/>
-                    <Button Text="Jadwal Kelas"/>
+                    <Button Text="Jadwal Kelas" Clicked="GotoClassReminder"/>
                 </FlexLayout>
                 </VerticalStackLayout>
             </HorizontalStackLayout>

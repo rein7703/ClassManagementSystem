@@ -2,12 +2,18 @@
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ClassManagementSystemMAUIVersion"
+             xmlns:material="clr-namespace:UraniumUI.Material.Resources;assembly=UraniumUI.Material"
              x:Class="ClassManagementSystemMAUIVersion.App">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <material:ColorResource />
+                <material:StyleResource />
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                
+                
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+                
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

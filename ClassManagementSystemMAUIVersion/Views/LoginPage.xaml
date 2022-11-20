@@ -13,7 +13,7 @@
 
         <!-- Body -->
         <FlexLayout FlexLayout.Grow="1">
-
+            
             <!-- Content -->
             <HorizontalStackLayout FlexLayout.Grow="1" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
                 <VerticalStackLayout>
@@ -39,8 +39,10 @@
                                Placeholder="Password Anda"
                                WidthRequest="300"
                                IsPassword="True"
+                               
 />
                 </FlexLayout>
+                    
                     <FlexLayout HeightRequest="36" 
                                 MinimumWidthRequest="240" 
                                 Margin="0,12,0,12" 
@@ -63,9 +65,22 @@
 
 
             <!-- Aside items -->
-            <BoxView FlexLayout.Basis="25%"
+            <HorizontalStackLayout
+                
+                HorizontalOptions="Fill" 
+                VerticalOptions="Fill" 
+                FlexLayout.Basis="25%"
                      MinimumWidthRequest="100"
-                     Color="{DynamicResource Primary}" />
+                     BackgroundColor="{DynamicResource Primary}">
+                <VerticalStackLayout HorizontalOptions="Fill" VerticalOptions="Center">
+                    <Button Text="Admin" 
+                        FontSize="Large" 
+                        Margin="0,12,0,12" 
+                        Padding="24,8,24,8" 
+                        HorizontalOptions="CenterAndExpand"></Button>
+                    <Button Text="Student" Margin="0,12,0,12"/>
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
 
         </FlexLayout>
 

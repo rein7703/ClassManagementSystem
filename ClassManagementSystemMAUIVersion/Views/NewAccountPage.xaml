@@ -40,18 +40,19 @@
                     WidthRequest="200"/>
             </FlexLayout>
 
-            <Label Text="Prodi :"
-                   Padding="0,8,0,8"
-                />
             <FlexLayout HeightRequest="32"
                         WidthRequest="360"
                         VerticalOptions="CenterAndExpand"
                         JustifyContent="SpaceBetween"
                         Direction="Row">
-                
-                <RadioButton Content="TE" GroupName="prodi" Margin="0"/>
-                <RadioButton Content="TIF" GroupName="prodi" Padding="0"/>
-                <RadioButton Content="TB" GroupName="prodi" Padding="0"/>
+            <Label Text="Prodi :"
+                   Padding="0,8,0,8"
+                />
+            
+                <Entry
+                    Placeholder="8-32 karakter"
+                    WidthRequest="200"/>
+
             </FlexLayout>
 
             <FlexLayout HeightRequest="32"
