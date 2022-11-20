@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassManagementSystemWinForms
 {
+    
     public static class DotEnv
     {
         public static void Load(string filePath)

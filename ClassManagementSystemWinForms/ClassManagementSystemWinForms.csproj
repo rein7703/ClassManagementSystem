@@ -9,6 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Update="AddClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AddTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="AllLogin.cs">
       <SubType>Form</SubType>
     </Compile>

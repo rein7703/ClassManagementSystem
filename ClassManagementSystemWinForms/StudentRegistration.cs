@@ -21,6 +21,13 @@ namespace ClassManagementSystemWinForms
                 MessageBox.Show("Mohon cek kembali kolom Password dan Ulangi Password");
                 return;
             }
+            string prodi = "";
+            if (rbTE.Checked) prodi = "S1 TEKNIK ELEKTRO";
+            else if (rbTIF.Checked) prodi = "S1 TEKNOLOGI INFORMASI";
+            else if (rbTB.Checked) prodi = "S1 TEKNIK BIOMEDIS";
+            else prodi = txtOtherProdi.Text;
+            Student student = new Student(txtName.Text, txtUsername.Text, txtPassword.Text, txtNIU.Text, prodi);
+            Console.WriteLine(student.createAtDatabase());
 
         }
         

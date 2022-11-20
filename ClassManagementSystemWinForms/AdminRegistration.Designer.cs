@@ -34,13 +34,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNama = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNIP = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtJabatan = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtRepeatPassword = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -106,16 +106,17 @@
             this.btnRegister.TabIndex = 6;
             this.btnRegister.Text = "Daftar";
             this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // textBox1
+            // txtNama
             // 
-            this.textBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(90, 304);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(446, 33);
-            this.textBox1.TabIndex = 8;
+            this.txtNama.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtNama.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNama.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNama.Location = new System.Drawing.Point(90, 304);
+            this.txtNama.Name = "txtNama";
+            this.txtNama.Size = new System.Drawing.Size(446, 33);
+            this.txtNama.TabIndex = 8;
             // 
             // label4
             // 
@@ -127,15 +128,15 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Nama";
             // 
-            // textBox2
+            // txtNIP
             // 
-            this.textBox2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(90, 226);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(446, 33);
-            this.textBox2.TabIndex = 10;
+            this.txtNIP.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtNIP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNIP.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNIP.Location = new System.Drawing.Point(90, 226);
+            this.txtNIP.Name = "txtNIP";
+            this.txtNIP.Size = new System.Drawing.Size(446, 33);
+            this.txtNIP.TabIndex = 10;
             // 
             // label5
             // 
@@ -147,15 +148,15 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "NIP";
             // 
-            // textBox3
+            // txtJabatan
             // 
-            this.textBox3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(90, 384);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(446, 33);
-            this.textBox3.TabIndex = 13;
+            this.txtJabatan.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtJabatan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtJabatan.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtJabatan.Location = new System.Drawing.Point(90, 384);
+            this.txtJabatan.Name = "txtJabatan";
+            this.txtJabatan.Size = new System.Drawing.Size(446, 33);
+            this.txtJabatan.TabIndex = 13;
             // 
             // label6
             // 
@@ -167,16 +168,16 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Jabatan";
             // 
-            // textBox4
+            // txtRepeatPassword
             // 
-            this.textBox4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.Location = new System.Drawing.Point(90, 536);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(446, 33);
-            this.textBox4.TabIndex = 19;
-            this.textBox4.UseSystemPasswordChar = true;
+            this.txtRepeatPassword.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtRepeatPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRepeatPassword.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtRepeatPassword.Location = new System.Drawing.Point(90, 536);
+            this.txtRepeatPassword.Name = "txtRepeatPassword";
+            this.txtRepeatPassword.Size = new System.Drawing.Size(446, 33);
+            this.txtRepeatPassword.TabIndex = 19;
+            this.txtRepeatPassword.UseSystemPasswordChar = true;
             // 
             // label7
             // 
@@ -194,13 +195,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(652, 635);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtRepeatPassword);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtJabatan);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtNIP);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNama);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
@@ -224,13 +225,13 @@
         private Label label2;
         private Label label3;
         private Button btnRegister;
-        private TextBox textBox1;
+        private TextBox txtNama;
         private Label label4;
-        private TextBox textBox2;
+        private TextBox txtNIP;
         private Label label5;
-        private TextBox textBox3;
+        private TextBox txtJabatan;
         private Label label6;
-        private TextBox textBox4;
+        private TextBox txtRepeatPassword;
         private Label label7;
     }
 }

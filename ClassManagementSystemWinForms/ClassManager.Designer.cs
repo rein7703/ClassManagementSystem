@@ -34,9 +34,8 @@
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,32 +108,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(731, 264);
             this.dataGridView1.TabIndex = 12;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.ForestGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(317, 159);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 44);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Ubah Kelas";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.ForestGreen;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(602, 159);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(174, 44);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Hapus Kelas";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.ForestGreen;
@@ -148,15 +121,26 @@
             this.button3.Text = "Export ke Kalender";
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(45, 508);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(485, 30);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Tips: Klik 2 kali kelas untuk mengubah atau menghapus";
+            // 
             // ClassManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(816, 556);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.linkLabel2);
@@ -179,8 +163,7 @@
         private LinkLabel linkLabel2;
         private Label label1;
         private DataGridView dataGridView1;
-        private Button button1;
-        private Button button2;
         private Button button3;
+        private Label label2;
     }
 }

@@ -5,14 +5,14 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Npgsql;
-/*
+
 namespace ClassManagementSystemWinForms
 {
     public abstract class User
     {
         protected int _id;
         protected string _name;
-        protected string _email;
+        protected string _username;
         protected string _password;
 
         public int Id
@@ -26,10 +26,10 @@ namespace ClassManagementSystemWinForms
             set { _name = value; }
         }
 
-        public string Email
+        public string Username
         {
-            get { return _email; }
-            set { _email = value; }
+            get { return _username; }
+            set { _username = value; }
         }
 
         [JsonIgnore]
@@ -46,19 +46,21 @@ namespace ClassManagementSystemWinForms
 
         public virtual bool createAtDatabase() { throw new NotImplementedException(); }
 
-        public virtual bool createTable() { throw new NotImplementedException(); }
+        public virtual bool updateAtDatabase() { throw new NotImplementedException(); }
+
+        public virtual bool deleteAtDatabase() { throw new NotImplementedException(); }
     }
 
     public class Student : User
     {
 
-        private string _nim;
+        private string _niu;
         private string _prodi;
 
-        public string NIM
+        public string NIU
         {
-            get { return _nim; }
-            set { _nim = value; }
+            get { return _niu; }
+            set { _niu = value; }
         }
 
         public string Prodi
@@ -72,45 +74,87 @@ namespace ClassManagementSystemWinForms
             throw new NotImplementedException();
         }
 
-        public override bool createTable() {
-            try { 
-            SQLiteConnection connection;
-            connection = ConnectionSingleton.GetInstance(new SQLiteConnection()).Value;
-
-            SQLiteCommand sqlite_cmd;
-            sqlite_cmd = connection.CreateCommand();
-            sqlite_cmd.CommandText = "CREATE TABLE Student" +
-                "(ID INT PRIMARY KEY NOT NULL, " +
-                "NAME VARCHAR(255) UNIQUE NOT NULL, " +
-                "EMAIL VARCHAR(255) NOT NULL, " +
-                "PASSWORD VARCHAR(255) NOT NULL, " +
-                "NIM VARCHAR(255), " +
-                "Prodi VARCHAR(255))";
-            sqlite_cmd.ExecuteNonQuery();
-            Console.WriteLine("Created Table");
-        return true;}
-            catch { return false; }
+        public Student(string name, string username, string password, string niu, string prodi)
+        {
+            this._name = name;
+            this._username = username;
+            this._password = password;
+            this._niu = niu;
+            this._prodi = prodi;
         }
+
+
 
         public override bool createAtDatabase()
         {
             try
             {
-                SQLiteConnection connection;
-                connection = ConnectionSingleton.GetInstance(new SQLiteConnection()).Value;
-
-                SQLiteCommand sqlite_cmd;
-                sqlite_cmd = connection.CreateCommand();
-                sqlite_cmd.CommandText = "INSERT INTO TABLE Student" +
-                    "(NAME, EMAIL,PASSWORD,NIM,PRODI) " +
-                    "VALUES " +$"({_name},{_email},{_password},{_nim},{_prodi})";
-                sqlite_cmd.ExecuteNonQuery();
-                Console.WriteLine("Created Table");
+                string connstring = ConnString.connString;
+                using (var conn = new NpgsqlConnection(connstring))
+                {
+                    conn.Open();
+                    using (var cmd = new NpgsqlCommand())
+                    {
+                        cmd.Connection = conn;
+                        cmd.CommandText = "INSERT INTO \"Student\"(\"Name\", \"Username\", \"Password\", \"NIU\", \"Prodi\") VALUES (@name, @username, @password, @niu, @prodi)";
+                        cmd.Parameters.AddWithValue("name", _name);
+                        cmd.Parameters.AddWithValue("username", _username);
+                        cmd.Parameters.AddWithValue("password", _password);
+                        cmd.Parameters.AddWithValue("niu", int.Parse(_niu));
+                        cmd.Parameters.AddWithValue("prodi", _prodi);
+                        cmd.ExecuteNonQuery();
+                    }
+                    conn.Close();
+                }
+                MessageBox.Show("Data berhasil ditambahkan");
                 return true;
             }
-            catch { return false; }
+            catch(Exception ex) {
+                if (ex.Message.Contains("23505")) {
+                    MessageBox.Show("Username sudah ada");
+                    return false;
+                }
+                MessageBox.Show(ex.Message);
+                return false; 
+            }
         }
-    }
+
+        public bool updateAtDatabase(int id)
+        {
+            try
+            {
+                {
+                    string connstring = ConnString.connString;
+                    using (var conn = new NpgsqlConnection(connstring))
+                    {
+                        conn.Open();
+                        using (var cmd = new NpgsqlCommand())
+                        {
+                            cmd.Connection = conn;
+                            cmd.CommandText = "UPDATE \"Student\" SET \"Name\" = @name, \"Username\" = @username, \"Password\" = @password, \"NIU\" = @niu, \"Prodi\" = @prodi WHERE \"Id\" = @id";
+                            cmd.Parameters.AddWithValue("username", _username);
+                            cmd.Parameters.AddWithValue("password", _password);
+                            cmd.Parameters.AddWithValue("niu", int.Parse(_niu));
+                            cmd.Parameters.AddWithValue("prodi", _prodi);
+                            cmd.ExecuteNonQuery();
+                        }
+                        conn.Close();
+                    }
+                    MessageBox.Show("Data berhasil ditambahkan");
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message.Contains("23505"))
+                {
+                    MessageBox.Show("Username sudah ada");
+                    return false;
+                }
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
     
 
     public class Admin : User
@@ -119,7 +163,16 @@ namespace ClassManagementSystemWinForms
         private string _nip;
         private string _jabatan;
 
-        public string NIP
+            public Admin(string name, string username, string password, string nip, string jabatan)
+            {
+                this._name = name;
+                this._username = username;
+                this._password = password;
+                this._nip = nip;
+                this._jabatan = jabatan;
+            }
+
+            public string NIP
         {
             get { return _nip; }
             set { _nip = value; }
@@ -129,6 +182,42 @@ namespace ClassManagementSystemWinForms
         {
             get { return _jabatan; }
             set { _jabatan = value; }
+        }
+
+        public override bool createAtDatabase()
+        {
+            try
+            {
+                string connstring = ConnString.connString;
+                using (var conn = new NpgsqlConnection(connstring))
+                {
+                    conn.Open();
+                    using (var cmd = new NpgsqlCommand())
+                    {
+                        cmd.Connection = conn;
+                        cmd.CommandText = "INSERT INTO \"Student\"(\"Name\", \"Username\", \"Password\", \"NIP\", \"Jabatan\") VALUES (@name, @username, @password, @nip, @jabatan)";
+                        cmd.Parameters.AddWithValue("name", _name);
+                        cmd.Parameters.AddWithValue("username", _username);
+                        cmd.Parameters.AddWithValue("password", _password);
+                        cmd.Parameters.AddWithValue("nip", int.Parse(_nip));
+                        cmd.Parameters.AddWithValue("jabatan", _jabatan);
+                        cmd.ExecuteNonQuery();
+                    }
+                    conn.Close();
+                }
+                MessageBox.Show("Data berhasil ditambahkan");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message.Contains("23505"))
+                {
+                    MessageBox.Show("Username sudah ada");
+                    return false;
+                }
+                MessageBox.Show(ex.Message);
+                return false;
+            }
         }
 
         public void AddToCalendar(DateTime dateTime)
@@ -144,4 +233,3 @@ namespace ClassManagementSystemWinForms
         }
     }
 }
-*/
