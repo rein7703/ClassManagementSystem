@@ -52,8 +52,6 @@ namespace ClassManagementSystemWinForms
         private void dgvCourse_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try {
-
-
                     var r = dgvCourse.Rows[e.RowIndex];
                     int id = int.Parse(r.Cells["CourseId"].Value.ToString());
                     //Delete

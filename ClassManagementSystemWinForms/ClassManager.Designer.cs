@@ -32,7 +32,6 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCourse = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourse)).BeginInit();
             this.SuspendLayout();
@@ -86,19 +85,6 @@
             this.dgvCourse.TabIndex = 12;
             this.dgvCourse.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCourse_CellContentClick);
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.ForestGreen;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(900, 633);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(213, 44);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Export ke Kalender";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -118,7 +104,6 @@
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1205, 689);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.dgvCourse);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLogin);
@@ -138,7 +123,6 @@
         private Button btnLogin;
         private Label label1;
         private DataGridView dgvCourse;
-        private Button button3;
         private Label label2;
     }
 }

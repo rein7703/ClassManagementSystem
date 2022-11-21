@@ -7,6 +7,7 @@ namespace ClassManagementSystemWinForms
     public partial class AddClassStudent : Form
     {
         NpgsqlConnection connection = new NpgsqlConnection(ConnString.connString);
+        string id = "-1";
         public DataTable LoadData()
         {
             try
@@ -68,16 +69,10 @@ namespace ClassManagementSystemWinForms
             try
             {
                 //Selecting the cell
-                connection.Open();
-                var id = dgvCourse.Rows[e.RowIndex].Cells["Id"].Value.ToString();
-                NpgsqlCommand command = new NpgsqlCommand("INSERT INTO \"StudentCourse\" (\"StudentID\",\"CourseID\") VALUES (@StudentId,@CourseId)", connection);
-                command.Parameters.AddWithValue("StudentID", LoginID.ID);
-                command.Parameters.AddWithValue("CourseID", int.Parse(id));
-                command.ExecuteNonQuery();
-                MessageBox.Show($"Berhasil menambahkan matkul!");
-                this.Close();
-                
-
+               
+                id = dgvCourse.Rows[e.RowIndex].Cells["Id"].Value.ToString();
+                lblSelectedTitle.Text = dgvCourse.Rows[e.RowIndex].Cells["Name"].Value.ToString();
+    
             }
             catch (Exception ex)
             {
@@ -86,9 +81,37 @@ namespace ClassManagementSystemWinForms
             }
             finally
             {
-                connection.Close();
+                
             }
 
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            try { 
+            connection.Open();
+            if(id=="-1")
+            {
+                MessageBox.Show("Pilih matkul terlebih dahulu");
+                return;
+            }
+            NpgsqlCommand command = new NpgsqlCommand("INSERT INTO \"StudentCourse\" (\"StudentID\",\"CourseID\") VALUES (@StudentId,@CourseId)", connection);
+            command.Parameters.AddWithValue("StudentID", LoginID.ID);
+            command.Parameters.AddWithValue("CourseID", int.Parse(id));
+            command.ExecuteNonQuery();
+            MessageBox.Show($"Berhasil menambahkan matkul!");
+        }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            finally
+            {
+                
+                connection.Close();
+                LoadData();
+            }
         }
     }
 }

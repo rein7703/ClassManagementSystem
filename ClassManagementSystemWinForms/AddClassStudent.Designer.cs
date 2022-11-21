@@ -34,6 +34,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dgvCourse = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblSelectedTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourse)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,6 +109,29 @@
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Tambah";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(610, 72);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(179, 30);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Currently Selected :";
+            // 
+            // lblSelectedTitle
+            // 
+            this.lblSelectedTitle.AutoSize = true;
+            this.lblSelectedTitle.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSelectedTitle.Location = new System.Drawing.Point(793, 72);
+            this.lblSelectedTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSelectedTitle.Name = "lblSelectedTitle";
+            this.lblSelectedTitle.Size = new System.Drawing.Size(30, 30);
+            this.lblSelectedTitle.TabIndex = 10;
+            this.lblSelectedTitle.Text = " _";
             // 
             // AddClassStudent
             // 
@@ -114,6 +139,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1156, 582);
+            this.Controls.Add(this.lblSelectedTitle);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvCourse);
             this.Controls.Add(this.label2);
@@ -138,5 +165,7 @@
         private DataGridView dgvCourse;
         private Button btnAdd;
         private TextBox txtSearch;
+        private Label label4;
+        private Label lblSelectedTitle;
     }
 }
