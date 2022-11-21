@@ -9,6 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove=".ConnString" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include=".ConnString">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="AddClassStudent.cs">
       <SubType>Form</SubType>
     </Compile>

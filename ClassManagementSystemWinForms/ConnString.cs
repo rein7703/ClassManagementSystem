@@ -8,6 +8,7 @@ namespace ClassManagementSystemWinForms
 {
     public static class ConnString
     {
-        public const string connString = "Host=localhost;Port=5432;Username=postgres;Password=halodunia123;Database=ClassManagementSystem";
+
+        public static string connString = "Host=localhost;Port=5432;Username=postgres;Password=halodunia123;Database=ClassManagementSystem";
     }
 }
